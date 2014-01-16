@@ -1,9 +1,12 @@
 within ThermoCycle.Components.HeatFlow.HeatTransfer.BaseClass;
 partial model PartialHeatTransfer
 // Partial heat transfer model
-replaceable package Medium=Modelica.Media.Interfaces.PartialMedium
+replaceable package Medium =ThermoCycle.Media.DummyFluid
     "Medium in the component"
     annotation(Dialog(tab="Internal Interface",enable=false));
+// Modelica.Media.Interfaces.PartialMedium
+// What are the implications of changing extending medium?
+
   parameter Integer n=1 "Number of heat transfer segments";
   // Inputs provided to heat transfer model
   input Medium.ThermodynamicState[n] FluidState
